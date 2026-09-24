@@ -1,22 +1,21 @@
-# Invoice Preflight — PDF invoice review pilot
+# Invoice Preflight — offline PDF invoice review
 
-Turn a folder of supplier invoice PDFs into a reviewable CSV and HTML report. The local Python prototype extracts invoice fields and highlights missing values, duplicate supplier/invoice-number pairs, and subtotal + tax vs. total mismatches. A person reviews the originals before any accounting use.
+Invoice Preflight reads selected supplier invoice PDFs locally and creates CSV and HTML reports for human review. It highlights missing fields, repeated invoice numbers, currency conflicts and subtotal + tax vs. total mismatches. It does not post entries to accounting systems.
 
-## What the current prototype demonstrates
+## Desktop beta (September 2026)
 
-- Runs locally without sending invoice data to a hosted service or creating accounting entries.
-- Writes `invoices.csv`, `review.csv` and `review.html`.
-- Handles simple labeled English and Bulgarian text PDFs, including Bulgarian invoice dates, BGN and decimal-comma amounts.
-- Includes five **fictional** example PDFs: three English examples and two Bulgarian examples. The latter demonstrate a correct total and an incorrect total flagged for review.
-- Six automated tests pass. This is a demonstration, not a measured production accuracy claim.
-- Optional English OCR needs local Tesseract and always requires manual review. Bulgarian scanned PDFs need additional OCR work.
+- A graphical interface lets users select PDF files, choose an output folder, run checks and open the report without a command line.
+- Supports simple labeled English and Bulgarian text PDFs, Bulgarian dates, BGN and decimal-comma amounts. Five **fictional** example PDFs are available privately for a qualified demo.
+- Nine automated tests pass on the prototype. These are not a measurement of accuracy on production invoices.
+- Optional offline OCR requires separately installed Tesseract and pdftoppm. English OCR has been tested; Bulgarian OCR configuration exists but has not been validated with scanned Bulgarian documents.
+- Files remain on the user's computer. Original invoices must be verified before any accounting action.
 
-## €500 fixed-scope pilot
+**Status:** source beta. A Windows executable has not yet been built or tested on a clean Windows computer. This is not currently an instant-download retail product. Realistic redacted formats and secure post-payment delivery also need validation before launch.
 
-For €500, I will adapt extraction and checks to **5–10 representative, synthetic or appropriately redacted invoice templates** supplied by the buyer. The agreed delivery includes configured Python source, CSV/HTML review output, instructions and one correction round for those layouts. We will agree on fields and acceptance examples before starting. Suitable for a small finance or operations team reviewing supplier bills by hand.
+## €500 fixed-scope customization pilot
 
-The pilot does **not** include a QuickBooks API connection, automatic ledger posting, tax advice, unlimited formats, Bulgarian scanned-PDF OCR or guaranteed OCR accuracy. Additional work needs separate scope and testing.
+For €500, I can adapt extraction and checks to **5–10 agreed, appropriately redacted invoice templates** supplied by a buyer, with configured source, CSV/HTML output, setup notes and one correction round. Scope and acceptance examples must be agreed before work begins. QuickBooks integration, automatic posting, tax advice, unlimited formats and guaranteed OCR accuracy are outside this pilot.
 
-**Interested?** [Contact me on LinkedIn](https://www.linkedin.com/in/dobromir-kostov-a04714262) with the subject “Invoice Preflight pilot” and the number of invoice layouts you need reviewed. Please share only synthetic or redacted samples initially.
+**Interested in a demo or pilot?** [Contact me on LinkedIn](https://www.linkedin.com/in/dobromir-kostov-a04714262) with the subject “Invoice Preflight pilot”. Please share only synthetic or redacted samples initially.
 
-The working source and example PDFs can be shared privately as part of a qualified pilot discussion. This public repository is a product overview, not a software download.
+The working source and example PDFs are held privately. This public repository is a project overview.
